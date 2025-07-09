@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const userDataContext=createContext()
 function UserContext({children}) {
-    const serverUrl="http://localhost:3001"
+    const serverUrl="https://chatbot-backend-git-main-saurabh-singhs-projects-a1962278.vercel.app"
     const [userData,setUserdata]=useState(null)
     const handleCurrentUser=async()=>{
       try {
