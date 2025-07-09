@@ -5,6 +5,7 @@ import SignIn from './pages/SignIn'
 import Customization from './pages/Customization'
 import { userDataContext } from './context/UserContext'
 import Home from './pages/Home'
+import ProtectedRoute from './pages/ProtectedRoutes'
 
 
 function App() {
@@ -12,7 +13,11 @@ function App() {
   return (
     <div>
       <Routes>
-      <Route path="/" element={<Home/>}/>
+      <Route path="/" element={
+        <ProtectedRoute>
+        <Home/>
+        </ProtectedRoute>
+      }/>
 
         <Route path="/signup" element={!userData?<SignUp/>:<Navigate to={"/"}/>}/>
         <Route path="/signin" element={!userData?<SignIn/>:<Navigate to={"/"}/>}/>

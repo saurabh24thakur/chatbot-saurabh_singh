@@ -27,6 +27,7 @@ function SignIn() {
         let result=await axios.post(`${serverUrl}/api/auth/signin`,{email,password},{withCredentials:true})
          setUserdata(result.data)
         setLoading(false)
+        navigate("/home");
       } catch (error) {
         console.log(error)
         setError(error.response.data.message)

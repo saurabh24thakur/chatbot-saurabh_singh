@@ -20,6 +20,7 @@ function SignUp() {
       try {
         let result=await axios.post(`${serverUrl}/api/auth/signup`,{name,email,password},{withCredentials:true})
         setUserdata(result.data)
+        navigate("/home");
       } catch (error) {
         console.log(error)
         setError(error.response.data.message)
