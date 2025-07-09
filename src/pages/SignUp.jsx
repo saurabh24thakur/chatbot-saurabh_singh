@@ -18,7 +18,7 @@ function SignUp() {
     const handleSignUp=async (e)=>{
       e.preventDefault()
       try {
-        let result=await axios.post(`${serverUrl}/api/auth/signup`,{name,email,password},{withCredentials:true})
+        let result=await axios.post(`${serverUrl}/api/auth/signup`,{username,email,password},{withCredentials:true})
         setUserdata(result.data)
         navigate("/home");
       } catch (error) {
